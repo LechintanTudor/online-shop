@@ -1,0 +1,13 @@
+server:
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/online-shop
+    username: online-shop
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: create
