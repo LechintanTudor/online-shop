@@ -1,6 +1,6 @@
 package xyz.lechi.onlineshop.controller;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import xyz.lechi.onlineshop.dto.CreateProductDto;
 import xyz.lechi.onlineshop.dto.ProductDto;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
 

@@ -1,6 +1,6 @@
 package xyz.lechi.onlineshop.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import xyz.lechi.onlineshop.dto.CreateProductDto;
 import xyz.lechi.onlineshop.dto.ProductDto;
@@ -10,7 +10,7 @@ import xyz.lechi.onlineshop.repository.ProductRepository;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
