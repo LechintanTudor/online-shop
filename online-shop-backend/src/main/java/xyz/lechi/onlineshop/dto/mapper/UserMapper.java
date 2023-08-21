@@ -5,6 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import xyz.lechi.onlineshop.domain.User;
 import xyz.lechi.onlineshop.domain.embeddable.UserRole;
+import xyz.lechi.onlineshop.dto.AuthUserDto;
 import xyz.lechi.onlineshop.dto.CreateUserDto;
 import xyz.lechi.onlineshop.dto.UserDto;
 
@@ -24,6 +25,23 @@ public class UserMapper {
             .id(user.getId())
             .firstName(user.getFirstName())
             .lastName(user.getLastName())
+            .roles(roles)
+            .build();
+    }
+
+    public AuthUserDto toAuthDto(User user) {
+        var roles = user
+            .getRoles()
+            .stream()
+            .map(UserRole::name)
+            .toList();
+
+        return AuthUserDto.builder()
+            .id(user.getId())
+            .firstName(user.getFirstName())
+            .lastName(user.getLastName())
+            .username(user.getUsername())
+            .email(user.getEmail())
             .roles(roles)
             .build();
     }
