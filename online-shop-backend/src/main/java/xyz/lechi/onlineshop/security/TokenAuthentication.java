@@ -18,6 +18,10 @@ public class TokenAuthentication extends AbstractAuthenticationToken {
         super(Collections.emptyList());
         this.token = token;
         this.user = user;
+
+        if (user != null) {
+            setAuthenticated(true);
+        }
     }
 
     @Override

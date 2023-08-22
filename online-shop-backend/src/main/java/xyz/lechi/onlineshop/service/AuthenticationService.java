@@ -9,6 +9,8 @@ import xyz.lechi.onlineshop.dto.LoginDto;
 import xyz.lechi.onlineshop.dto.TokenDto;
 import xyz.lechi.onlineshop.repository.UserRepository;
 
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
@@ -28,5 +30,9 @@ public class AuthenticationService {
         return TokenDto.builder()
             .token(tokenService.createTokenForUser(user.getId()).toString())
             .build();
+    }
+
+    public void logout(UUID token) {
+        tokenService.deleteToken(token);
     }
 }

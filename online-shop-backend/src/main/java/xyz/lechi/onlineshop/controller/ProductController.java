@@ -1,6 +1,7 @@
 package xyz.lechi.onlineshop.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import xyz.lechi.onlineshop.dto.CreateProductDto;
 import xyz.lechi.onlineshop.dto.ProductDto;
