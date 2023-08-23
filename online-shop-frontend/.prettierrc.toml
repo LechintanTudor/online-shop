@@ -1,0 +1,13 @@
+plugins = [
+    "@trivago/prettier-plugin-sort-imports",
+]
+
+importOrderParserPlugins = [
+    "decorators",
+    "typescript",
+]
+
+importOrder = [
+    "^@(.*)$",
+    "^[./]",
+]
