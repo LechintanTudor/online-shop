@@ -65,7 +65,8 @@
               "browserTarget": "online-shop:build:production"
             },
             "development": {
-              "browserTarget": "online-shop:build:development"
+              "browserTarget": "online-shop:build:development",
+              "proxyConfig": "src/proxy.config.json"
             }
           },
           "defaultConfiguration": "development"
