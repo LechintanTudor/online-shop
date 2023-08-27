@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Credentials } from '../../data/credentials';
+import { UserCredentials } from '../../data/user-credentials';
 
 @Component({
   selector: 'login-form',
@@ -8,7 +8,7 @@ import { Credentials } from '../../data/credentials';
 })
 export class LoginFormComponent {
   @Output()
-  onSubmit = new EventEmitter<Credentials>();
+  onSubmit = new EventEmitter<UserCredentials>();
 
   loginForm = this.fb.nonNullable.group({
     username: ['', Validators.required],
@@ -17,11 +17,21 @@ export class LoginFormComponent {
 
   constructor(private fb: FormBuilder) {}
 
+  setCredentials(credentials: UserCredentials): void {
+    this.loginForm.patchValue(credentials);
+  }
+
+  isReadyToSubmit(): boolean {
+    return this.loginForm.valid;
+  }
+
   emitOnSubmit(): void {
-    if (this.loginForm.valid) {
+    if (this.isReadyToSubmit()) {
+      const formValue = this.loginForm.value;
+
       this.onSubmit.emit({
-        username: this.loginForm.value.username!,
-        password: this.loginForm.value.password!,
+        username: formValue.username!,
+        password: formValue.password!,
       });
     }
   }

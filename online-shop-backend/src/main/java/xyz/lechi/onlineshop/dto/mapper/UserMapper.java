@@ -9,6 +9,8 @@ import xyz.lechi.onlineshop.dto.AuthUserDto;
 import xyz.lechi.onlineshop.dto.CreateUserDto;
 import xyz.lechi.onlineshop.dto.UserDto;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class UserMapper {
@@ -49,19 +51,13 @@ public class UserMapper {
     public User fromCreateDto(CreateUserDto createDto) {
         var passwordHash = passwordEncoder.encode(createDto.getPassword());
 
-        var roles = createDto
-            .getRoles()
-            .stream()
-            .map(UserRole::valueOf)
-            .toList();
-
         return User.builder()
             .firstName(createDto.getFirstName())
             .lastName(createDto.getLastName())
             .username(createDto.getUsername())
             .email(createDto.getEmail())
             .passwordHash(passwordHash)
-            .roles(roles)
+            .roles(List.of(UserRole.CUSTOMER))
             .build();
     }
 }

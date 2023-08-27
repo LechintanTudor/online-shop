@@ -18,7 +18,9 @@
           formControlName="password"
         />
       </mat-form-field>
-      <button mat-raised-button color="primary">Log In</button>
+      <button mat-raised-button color="primary" [disabled]="!isReadyToSubmit()">
+        Log In
+      </button>
       <button mat-stroked-button type="button" routerLink="/register">
         Register
       </button>

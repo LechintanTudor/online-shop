@@ -9,15 +9,23 @@ import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { AuthenticationService } from './services/authentication.service';
+import { UserService } from './services/user.service';
 import { LoginEffects } from './store/login.effects';
 import { loginReducer } from './store/login.reducer';
 import { LOGIN_FEATURE_NAME } from './store/login.state';
 
 @NgModule({
-  declarations: [LoginFormComponent, LoginPageComponent],
-  providers: [AuthenticationService],
+  declarations: [
+    LoginFormComponent,
+    LoginPageComponent,
+    RegisterFormComponent,
+    RegisterPageComponent,
+  ],
+  providers: [AuthenticationService, UserService],
   imports: [
     // Angular
     CommonModule,
