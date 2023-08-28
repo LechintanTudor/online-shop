@@ -26,7 +26,7 @@ public class SecurityConfig {
             .addFilterBefore(tokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
             .authorizeHttpRequests(
                 authorize -> authorize
-                    .requestMatchers("/register", "/login").permitAll()
+                    .requestMatchers("/register", "/login", "/products/**").permitAll()
                     .anyRequest().authenticated()
             )
             .sessionManagement(
