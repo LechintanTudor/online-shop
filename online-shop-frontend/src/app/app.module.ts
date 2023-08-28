@@ -6,23 +6,21 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginModule } from './modules/login/login.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     // Angular
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
+    // Routing
+    AppRoutingModule,
 
     // NgRx
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
-
-    // Features
-    LoginModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

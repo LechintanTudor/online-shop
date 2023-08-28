@@ -10,6 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { LoginRoutingModule } from './login-routing.module';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { AuthenticationService } from './services/authentication.service';
@@ -31,6 +32,9 @@ import { LOGIN_FEATURE_NAME } from './store/login.state';
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
+
+    // Routing
+    LoginRoutingModule,
 
     // Material
     MatButtonModule,
