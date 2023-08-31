@@ -16,8 +16,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
 import { LoginEffects } from './store/login.effects';
-import { loginReducer } from './store/login.reducer';
-import { LOGIN_FEATURE_NAME } from './store/login.state';
+import { LOGIN_FEATURE_NAME, loginReducer } from './store/login.reducer';
 
 @NgModule({
   declarations: [

@@ -10,6 +10,8 @@ import {
 } from './login.actions';
 import { initialLoginState } from './login.state';
 
+export const LOGIN_FEATURE_NAME = 'login';
+
 export const loginReducer = createReducer(
   initialLoginState,
 
